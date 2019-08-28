@@ -1,0 +1,20 @@
+#MANAGEMENT CONFIGURATION
+#SPRING BOOT 2.0 가면서 actuator default로 활성화 되는건 health 밖에 없음.
+#exposure.include *로 전체 활성화
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+eureka:
+  client:
+    #유레카 서비스에(자신)을 등록 할 여부
+    registerWithEureka: false
+    #레지스트리 정보를 로컬에 캐싱 여부
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://localhost:6002/eureka/
+  server:
+    #서버가 요청을 받기 전 대기 할 초기 시간
+    waitTimeInMsWhenSyncEmpty: 5
