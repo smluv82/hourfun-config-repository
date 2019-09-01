@@ -24,7 +24,7 @@ zuul:
   addProxyHeaders: true
   ignoredPatterns: /actuator**
   #아래의 설정은 default 값임.
-#  sensitiveHeaders: Cookie,Set-Cookie, Authorization
+  sensitiveHeaders: Cookie,Set-Cookie, Authorization
   host:
     socket-timeout-millis: 600000
     connect-timeout-millis: 600000
