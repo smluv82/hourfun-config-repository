@@ -22,6 +22,7 @@ zuul:
   retryable: true
   ignoredServices: "*"
   addProxyHeaders: true
+  ignoredPatterns: /actuator**
   #아래의 설정은 default 값임.
 #  sensitiveHeaders: Cookie,Set-Cookie, Authorization
   host:
