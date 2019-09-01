@@ -1,0 +1,49 @@
+#eureka
+eureka:
+  instance:
+    #서비스 이름 대신 서비스 IP 주소 등록
+    preferIpAddress: true
+  client:
+    #유레카 서버에 서비스 등록
+    registerWithEureka: true
+    #레지스트리 사본을 로컬로 가져오는설정
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:6002/eureka/
+
+#RIBBON CONFIGURATION
+ribbon:
+  eureka:
+    enabled: true
+
+#ZUUL CONFIGURATION
+zuul:
+  prefix: /api
+  retryable: true
+  ignoredServices: "*"
+  addProxyHeaders: true
+  #아래의 설정은 default 값임.
+#  sensitiveHeaders: Cookie,Set-Cookie, Authorization
+  host:
+    socket-timeout-millis: 600000
+    connect-timeout-millis: 600000
+  routes:
+    hourfun-auth:
+      serviceId: hourfun-auth
+      path: /auth/**
+    hourfun-payment:
+      serviceId: hourfun-payment
+      path: /payment/**
+    hourfun-ensemble:
+      serviceId: hourfun-ensemble
+      path: /ensemble/**
+
+#spring boot actuator
+management:
+  endpints:
+    web:
+      exposure:
+        include: "*"
+#      base-path: /act
+#      path-mapping:
+#        health: healthcheck
