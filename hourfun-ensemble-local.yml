@@ -1,0 +1,63 @@
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/hourfun?characterEncoding=UTF-8&serverTimezone=UTC
+    #      username: smluv82
+    #      password: 1234qwer!@
+    username: ENC[7Eu/Bm3+rBBJbCepxYoPrVMkOsd55L2x4yamYcYQwBY=]
+    password: ENC[GeuSeTSfpLZCQ6HCsaSiAqltqkiwGEZ9faFBucbGpgKmIr0db+0WUQ==]
+    driver-class-name: com.mysql.jdbc.Driver
+    continue-on-error: true
+
+  jpa:
+    hibernate:
+      #         ddl-auto: create
+      ddl-auto: none
+    generate-ddl: false
+    show-sql: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    properties:
+      hibernate:
+        format_sql: true
+        use_sql_comments: true
+
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        max-wait: -1ms
+        min-idle: 2
+
+#eureka
+eureka:
+  instance:
+    #서비스 이름 대신 서비스 IP 주소 등록
+    preferIpAddress: true
+  client:
+    #유레카 서버에 서비스 등록
+    registerWithEureka: true
+    #레지스트리 사본을 로컬로 가져오는설정
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:6002/eureka/
+
+#spring boot actuator
+management:
+  endpints:
+    web:
+      exposure:
+        include: "*"
+#      base-path: /act
+#      path-mapping:
+#        health: healthcheck
+
+#jasypt config
+jasypt:
+  encryptor:
+    property:
+      prefix: "ENC["
+      suffix: "]"
