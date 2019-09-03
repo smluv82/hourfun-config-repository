@@ -60,8 +60,9 @@ security:
 #  oauth2:
 #    resource:
 #      userInfoUri: http://localhost:6012/user/info
-  resource:
-    token-info-uri: http://localhost:6012/user/info
+  oauth2:
+    resource:
+      user-info-uri: http://localhost:6012/user/info
 
 #jasypt config
 jasypt:
