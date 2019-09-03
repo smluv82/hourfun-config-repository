@@ -62,7 +62,13 @@ security:
 #      userInfoUri: http://localhost:6012/user/info
   oauth2:
     resource:
-      user-info-uri: http://localhost:6012/user/info
+#      user-info-uri: http://localhost:6012/user/info
+      token-info-uri: http://localhost:6012/oauth/check_token
+      token-type: Bearer
+    client:
+      client-id: hourfun
+      client-secret: testsecret
+
 
 #jasypt config
 jasypt:
