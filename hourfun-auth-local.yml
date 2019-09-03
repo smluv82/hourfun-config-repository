@@ -62,7 +62,6 @@ jasypt:
       prefix: "ENC["
       suffix: "]"
 
-#security:
-#  oauth2:
-#    authorization:
-#      check-token-access: isAuthenticated()
+jwt:
+  signing:
+    key: "Qv8be6DrbRWsqWQQYqRjndHIejLsnzabaCBRtbNYwrSoMJ2bJKmW4w=="

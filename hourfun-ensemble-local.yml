@@ -56,18 +56,18 @@ management:
 #        health: healthcheck
 
 #일단 테스트해보장
-security:
-#  oauth2:
-#    resource:
-#      userInfoUri: http://localhost:6012/user/info
-  oauth2:
-    resource:
-#      user-info-uri: http://localhost:6012/user/info
-      token-info-uri: http://localhost:6012/oauth/check_token
-      token-type: Bearer
-    client:
-      client-id: hourfun
-      client-secret: testsecret
+#        security:
+#          #  oauth2:
+#          #    resource:
+#          #      userInfoUri: http://localhost:6012/user/info
+#          oauth2:
+#            resource:
+#              #      user-info-uri: http://localhost:6012/user/info
+#              token-info-uri: http://localhost:6012/oauth/check_token
+#              token-type: Bearer
+#            client:
+#              client-id: hourfun
+#              client-secret: testsecret
 
 
 #jasypt config
@@ -76,3 +76,7 @@ jasypt:
     property:
       prefix: "ENC["
       suffix: "]"
+
+jwt:
+  signing:
+    key: "Qv8be6DrbRWsqWQQYqRjndHIejLsnzabaCBRtbNYwrSoMJ2bJKmW4w=="

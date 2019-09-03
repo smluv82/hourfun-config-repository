@@ -23,7 +23,7 @@ zuul:
   ignoredServices: "*"
   addProxyHeaders: true
   ignoredPatterns: /actuator**
-  #아래의 설정은 default 값임.
+  #oauth token (bearer token)
   sensitiveHeaders: Cookie,Set-Cookie, Authorization
   host:
     socket-timeout-millis: 600000
